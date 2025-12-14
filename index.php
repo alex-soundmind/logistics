@@ -142,14 +142,14 @@ if ($action === 'delete' && $id && $is_logged_in) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Авиакомпания: <?= $tables[$table] ?></title>
+    <title>Транспортная компания: <?= $tables[$table] ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
     <div class="header-inner">
         <!-- Добавил иконку самолета для красоты -->
-        <h1>✈️ Авиа-Менеджер</h1>
+        <h1>✈️ Транспортная компания</h1>
         <nav>
             <?php foreach ($tables as $tbl_name => $tbl_title): ?>
                 <a href="?table=<?= $tbl_name ?>" class="<?= $table === $tbl_name ? 'active' : '' ?>"><?= $tbl_title ?></a>
@@ -259,7 +259,7 @@ if ($action === 'delete' && $id && $is_logged_in) {
         <?php else: ?>
             Пользователь: <b><?= htmlspecialchars($_SESSION['user']['name']) ?></b> — <a href="logout.php">Выйти</a>
         <?php endif; ?>
-        <p style="margin-top: 0.5rem; opacity: 0.6;">&copy; <?= date('Y') ?> Авиакомпания</p>
+        <p style="margin-top: 0.5rem; opacity: 0.6;">&copy; <?= date('Y') ?> Транспортная компания</p>
     </div>
 </footer>
 
