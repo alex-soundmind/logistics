@@ -5,7 +5,7 @@ session_start();
 $is_logged_in = isset($_SESSION['user']);
 $action = $_GET['action'] ?? 'list';
 // По умолчанию открываем таблицу Клиенты
-$table = $_GET['table'] ?? 'Clients';
+$table = $_GET['table'] ?? 'Employees';
 $id = $_GET['id'] ?? null;
 
 // Список таблиц базы данных логистики
