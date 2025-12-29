@@ -1,3 +1,243 @@
+/* Подключаем характерный шрифт */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-body: #fdf4ff;          /* Нежно-розовый фон страницы */
+  --bg-card: #ffffff;          
+  --primary: #a78bfa;          /* Фиолетовый */
+  --accent: #facc15;           /* Желтый для акцентов */
+  --text-main: #000000;        /* Глубокий черный */
+  --border-width: 3px;         /* Жирные границы */
+  --shadow-hard: 6px 6px 0px #000000;
+  --shadow-hover: 2px 2px 0px #000000;
+  --danger: #ff4d4d;
+  --success: #4ade80;
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.4;
+}
+
+/* --- HEADER --- */
+header {
+  background-color: var(--accent);
+  border-bottom: var(--border-width) solid #000;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #000;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: var(--border-width) solid #000;
+  background: #fff;
+  box-shadow: 3px 3px 0px #000;
+  transition: all 0.1s ease;
+}
+
+nav a:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #000;
+  background-color: var(--primary);
+}
+
+nav a.active {
+  background-color: var(--primary);
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* --- CONTAINER --- */
+.container {
+  max-width: 1000px;
+  width: 90%;
+  margin: 4rem auto;
+  background-color: var(--bg-card);
+  padding: 3rem;
+  border: var(--border-width) solid #000;
+  box-shadow: var(--shadow-hard);
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background: var(--primary);
+  padding: 0.5rem 1rem;
+  border: var(--border-width) solid #000;
+  box-shadow: 4px 4px 0px #000;
+}
+
+/* Удаляем псевдоэлемент-палочку, так как стиль изменился */
+h2::before { display: none; }
+
+/* --- TABLE --- */
+.table-wrapper {
+  overflow-x: auto;
+  border: var(--border-width) solid #000;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 1.2rem;
+  text-align: left;
+}
+
+td {
+  padding: 1.2rem;
+  border-bottom: var(--border-width) solid #000;
+  font-weight: 500;
+}
+
+tr:hover td {
+  background-color: #f0f0f0;
+}
+
+/* --- ACTIONS & BUTTONS --- */
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actions a {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #000;
+  padding: 5px 10px;
+  background: #fff;
+  font-weight: bold;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.actions a.edit:hover { background: var(--success); }
+.actions a.delete:hover { background: var(--danger); }
+
+button,
+input[type="submit"] {
+  background-color: var(--accent);
+  color: #000;
+  border: var(--border-width) solid #000;
+  padding: 1rem 2rem;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-hard);
+  transition: all 0.1s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px #000;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+button.danger {
+  background-color: var(--danger);
+}
+
+/* --- FORM --- */
+form {
+  display: grid;
+  gap: 2rem;
+}
+
+form label {
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea {
+  border: var(--border-width) solid #000;
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  background: #fff;
+  box-shadow: inset 3px 3px 0px #eee;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  background-color: #fffbeb;
+  box-shadow: 5px 5px 0px #000;
+}
+
+/* --- FOOTER --- */
+footer {
+  margin-top: auto;
+  padding: 3rem;
+  border-top: var(--border-width) solid #000;
+  background: #fff;
+  font-weight: 600;
+}
+
+footer b {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
 /* Подключаем шрифт */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap');
 
