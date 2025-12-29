@@ -16,7 +16,7 @@ $tables = [
     'Trips' => 'Рейсы',
     'Vehicles' => 'Транспорт',
     'Employees' => 'Сотрудники',
-    'Drivers_on_Trips' => 'Водители на рейсах'
+    'Drivers_on_Trips' => 'Доставка'
 ];
 
 if (!isset($tables[$table])) {
